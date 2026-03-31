@@ -1,0 +1,220 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  height: 68px;
+  transition: var(--transition-slow);
+}
+
+.navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: var(--accent-gradient);
+  border-radius: var(--radius-sm);
+  color: white;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  white-space: nowrap;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+  background: var(--bg-card);
+}
+
+.nav-link--active {
+  color: var(--text-primary);
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+}
+
+.nav-link-emoji {
+  font-size: 1rem;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-family: var(--font-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.2);
+}
+
+.theme-icon {
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.theme-icon--sun {
+  color: #fbbf24;
+}
+
+.theme-icon--moon {
+  color: #818cf8;
+}
+
+.theme-label {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 16px;
+  }
+  .nav-link span:last-child {
+    display: none;
+  }
+  .nav-link-emoji {
+    font-size: 1.2rem;
+  }
+  .nav-link {
+    padding: 8px 10px;
+  }
+  .theme-label {
+    display: none;
+  }
+  .navbar-username {
+    display: none;
+  }
+}
+
+/* ===========================
+   Navbar Auth Elements
+   =========================== */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--border-strong, rgba(255,255,255,0.15));
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.navbar-username {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.navbar-signout-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-full, 100px);
+  border: 1px solid var(--border-strong, rgba(255,255,255,0.15));
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  font-family: var(--font-primary);
+}
+
+.navbar-signout-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.25);
+}
+
+.navbar-signin-btn {
+  padding: 7px 16px;
+  border-radius: var(--radius-full, 100px);
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.navbar-signin-btn:hover {
+  opacity: 0.88;
+  box-shadow: 0 0 16px rgba(124, 58, 237, 0.4);
+}
+

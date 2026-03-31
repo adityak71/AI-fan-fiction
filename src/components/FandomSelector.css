@@ -1,0 +1,75 @@
+.fandom-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fandom-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.fandom-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.fandom-group--half {
+  flex: 1;
+}
+
+.fandom-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.fandom-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.fandom-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: var(--font-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.fandom-chip:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.fandom-chip--active {
+  background: color-mix(in srgb, var(--chip-color, var(--accent-purple)) 15%, transparent);
+  border-color: var(--chip-color, var(--accent-purple));
+  color: var(--chip-color, var(--accent-purple));
+  font-weight: 600;
+}
+
+.fandom-chip--sm {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+
+.fandom-chip--sm.fandom-chip--active {
+  --chip-color: var(--accent-purple);
+}

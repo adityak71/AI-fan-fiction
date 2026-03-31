@@ -1,0 +1,191 @@
+/* ===========================
+   Login Page
+   =========================== */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  background: var(--bg-primary, #0f0f13);
+}
+
+/* Animated background orbs */
+.login-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  animation: orb-float 8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.login-orb--1 {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, #7c3aed, #4f46e5);
+  top: -120px;
+  left: -100px;
+  animation-duration: 9s;
+}
+
+.login-orb--2 {
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, #ec4899, #a855f7);
+  bottom: -80px;
+  right: -80px;
+  animation-duration: 11s;
+  animation-delay: -3s;
+}
+
+.login-orb--3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #06b6d4, #3b82f6);
+  bottom: 30%;
+  left: 10%;
+  animation-duration: 13s;
+  animation-delay: -6s;
+}
+
+@keyframes orb-float {
+  0%   { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-40px) scale(1.08); }
+}
+
+/* Card */
+.login-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 28px;
+  padding: 3rem 2.5rem 2.5rem;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+  animation: card-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(30px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Logo */
+.login-logo {
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  color: white;
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+}
+
+/* Title */
+.login-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-primary, #f1f1f5);
+  margin: 0 0 0.6rem;
+  letter-spacing: -0.5px;
+}
+
+.login-gradient-text {
+  background: linear-gradient(135deg, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtitle */
+.login-subtitle {
+  color: var(--text-secondary, #a0a0b0);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1.75rem;
+}
+
+/* Feature pills */
+.login-features {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.login-feature-pill {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary, #c0c0d0);
+  font-weight: 500;
+}
+
+/* Google button */
+.login-google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary, #f1f1f5);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  margin-bottom: 1.25rem;
+}
+
+.login-google-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.login-google-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.login-google-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Disclaimer */
+.login-disclaimer {
+  font-size: 0.75rem;
+  color: var(--text-secondary, #808090);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Light theme overrides */
+[data-theme="light"] .login-page {
+  background: #f3f0ff;
+}
+[data-theme="light"] .login-card {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 24px 60px rgba(100, 50, 200, 0.12);
+}
+[data-theme="light"] .login-orb {
+  opacity: 0.2;
+}
