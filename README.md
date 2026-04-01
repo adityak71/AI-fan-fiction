@@ -1,8 +1,9 @@
 # ✨ AI FanFic — Your Ultimate AI Fan Fiction Assistant
 
-🚀 **Live Demo:** https://xxxxxxxxxxx.com
-🚀 **GitHub Repo:** https://github.com/adityak71/AI-fan-fiction
-
+<p>
+  🚀 <strong>Live Demo:</strong> <a href="https://ai-fan-fiction.vercel.app"> Visit App</a><br>
+  📂 <strong>GitHub Repo:</strong> <a href="https://github.com/adityak71/AI-fan-fiction"> View Code</a>
+</p>
 ---
 
 ## 📌 Overview
@@ -88,11 +89,14 @@ npm install
 ### 3️⃣ Setup Environment Variables
 
 Create a `.env` file in the root directory:
-copy .env.example to .env and replace the '*****' with your API key.
 
 
-```env
-VITE_GEMINI_API_KEY=your_api_key_here
+
+```
+copy .env.example content to .env and replace the '*****' with your API keys.
+
+for firebase api keys you can directly paste your keys on \AI Fan Fiction\src\firebase.js file.
+
 ```
 
 ---
